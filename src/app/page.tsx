@@ -10,6 +10,16 @@ import { TimeClockSection } from '@/presentation/components/TimeClockSection';
 import { Header } from '@/presentation/components/Header';
 import { Footer } from '@/presentation/components/Footer';
 
+function ThemeManager() {
+  const theme = useSprintoStore((state) => state.settings.theme);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  return null;
+}
+
 export default function Home() {
   const { init, isLoading } = useSprintoStore();
 
@@ -28,6 +38,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <ThemeManager />
       <Header />
       
       <div className={styles.container}>

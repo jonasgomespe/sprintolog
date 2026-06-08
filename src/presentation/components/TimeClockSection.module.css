@@ -55,7 +55,7 @@
 }
 
 .pontoBtn:not(:disabled):hover {
-  background-color: #313136;
+  background-color: var(--btn-hover);
   border-color: var(--muted-foreground);
 }
 

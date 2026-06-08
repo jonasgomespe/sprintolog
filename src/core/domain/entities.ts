@@ -44,6 +44,7 @@ export interface TimeClock {
 export interface AppSettings {
   jiraEnabled: boolean;
   jiraSimulation: boolean;
+  theme: 'dark' | 'light';
 }
 
 export interface JiraConfig {
