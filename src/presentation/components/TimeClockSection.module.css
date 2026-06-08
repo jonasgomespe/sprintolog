@@ -1,0 +1,98 @@
+.card {
+  background-color: var(--card);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.icon {
+  color: var(--primary);
+}
+
+.countdown {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.pontoBtn {
+  background-color: var(--secondary);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted-foreground);
+  transition: all 0.2s;
+}
+
+.pontoBtn:not(:disabled):hover {
+  background-color: #313136;
+  border-color: var(--muted-foreground);
+}
+
+.pontoBtn.active {
+  background-color: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: var(--foreground);
+}
+
+.pontoBtn:disabled {
+  opacity: 1; /* Keeping opacity but changing color for disabled/already registered */
+  cursor: default;
+}
+
+.pontoBtn svg {
+  opacity: 0.7;
+}
+
+.pontoBtn.active svg {
+  color: var(--primary);
+  opacity: 1;
+}
+
+.pontoBtn span:first-of-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

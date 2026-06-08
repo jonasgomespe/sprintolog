@@ -1,0 +1,25 @@
+.footer {
+  padding: 2rem 0;
+  margin-top: auto;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.madeBy {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.heart {
+  color: var(--destructive);
+}
