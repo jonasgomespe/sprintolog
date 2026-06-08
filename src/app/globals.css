@@ -1,4 +1,5 @@
 :root {
+  /* Dark Theme (Default) */
   --background: #0a0a0b;
   --foreground: #f4f4f5;
   --card: #18181b;
@@ -19,6 +20,34 @@
   --input: #27272a;
   --ring: #3b82f6;
   --radius: 0.75rem;
+  --header-bg: rgba(10, 10, 11, 0.8);
+  --logo-text: #ffffff;
+  --btn-hover: #313136;
+}
+
+[data-theme='light'] {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #3b82f6;
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --logo-text: #0f172a;
+  --btn-hover: #e2e8f0;
 }
 
 * {

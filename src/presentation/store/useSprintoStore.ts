@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Task, Log, Template, AppSettings, JiraConfig, TimeClock, AppState } from '@/core/domain/entities';
+import { Task, Log, Template, AppSettings, JiraConfig, TimeClock, AppState, LogFilters } from '@/core/domain/entities';
 import { storage } from '@/infrastructure/storage/indexed-db';
 
 interface SprintoStore extends AppState {
@@ -47,7 +47,8 @@ const DEFAULT_TIMECLOCK: TimeClock = {
 
 const DEFAULT_SETTINGS: AppSettings = {
   jiraEnabled: true,
-  jiraSimulation: false
+  jiraSimulation: false,
+  theme: 'dark',
 };
 
 const DEFAULT_JIRA_CONFIG: JiraConfig = {

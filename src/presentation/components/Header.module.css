@@ -1,11 +1,12 @@
 .header {
   height: 64px;
   border-bottom: 1px solid var(--border);
-  background-color: rgba(10, 10, 11, 0.8);
+  background-color: var(--header-bg);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .content {
@@ -40,15 +41,31 @@
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--logo-text);
 }
 
 .logo h1 span {
   color: var(--primary);
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.themeBtn,
 .settingsBtn {
   color: var(--muted-foreground);
   transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeBtn:hover {
+  color: #f59e0b; /* Amber color for sun/light mode feel */
+  transform: scale(1.1);
 }
 
 .settingsBtn:hover {
