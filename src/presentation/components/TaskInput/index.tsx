@@ -13,7 +13,7 @@ export function TaskInput() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!description.trim()) return;
-    
+
     await addTask(description, jiraKey);
     setDescription('');
     setJiraKey('');
@@ -35,7 +35,7 @@ export function TaskInput() {
             <Terminal size={16} className={styles.promptIcon} />
             <input
               type="text"
-              placeholder="Objetivo do sprint..."
+              placeholder="No que você vai trabalhar?"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className={styles.mainInput}
