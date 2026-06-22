@@ -1,15 +1,13 @@
 import styles from './Footer.module.css';
-import { Heart } from 'lucide-react';
 
 export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
-        <p>SprintoLog &copy; {new Date().getFullYear()}</p>
+        <p>SPRINTOLOG &copy; {new Date().getFullYear()}</p>
         <div className={styles.madeBy}>
-          <span>Feito com</span>
-          <Heart size={14} className={styles.heart} fill="currentColor" />
-          <span>para alta performance</span>
+          <span>SYS. STATUS:</span>
+          <span className={styles.status}>OPERACIONAL</span>
         </div>
       </div>
     </footer>

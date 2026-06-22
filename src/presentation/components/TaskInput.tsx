@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useSprintoStore } from '@/presentation/store/useSprintoStore';
 import styles from './TaskInput.module.css';
-import { Plus, Hash } from 'lucide-react';
+import { Terminal, Hash } from 'lucide-react';
 
 export function TaskInput() {
   const [description, setDescription] = useState('');
@@ -28,34 +28,40 @@ export function TaskInput() {
 
   return (
     <div className={styles.container}>
-      <form className={styles.card} onSubmit={handleSubmit}>
+      <h2 className={styles.sectionTitle}>Novo Sprint</h2>
+      <form className={styles.terminalBox} onSubmit={handleSubmit}>
         <div className={styles.inputGroup}>
-          <input
-            type="text"
-            placeholder="No que você está focando agora?"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className={styles.mainInput}
-          />
-          <div className={styles.jiraInputWrapper}>
-            <Hash size={16} className={styles.jiraIcon} />
+          <div className={styles.promptLine}>
+            <Terminal size={16} className={styles.promptIcon} />
             <input
               type="text"
-              placeholder="Jira Key"
+              placeholder="Objetivo do sprint..."
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className={styles.mainInput}
+              autoComplete="off"
+            />
+          </div>
+          <div className={styles.promptLine}>
+            <Hash size={16} className={styles.promptIcon} />
+            <input
+              type="text"
+              placeholder="TICKET-123 (Opcional)"
               value={jiraKey}
               onChange={(e) => setJiraKey(e.target.value)}
               className={styles.jiraInput}
+              autoComplete="off"
             />
           </div>
         </div>
         <button type="submit" className={styles.submitBtn} disabled={!description.trim()}>
-          <Plus size={20} />
-          <span>Iniciar</span>
+          [ INICIAR SPRINT ]
         </button>
       </form>
 
       {templates.length > 0 && (
         <div className={styles.templates}>
+          <span className={styles.templatesLabel}>TEMPLATES:</span>
           {templates.map(t => (
             <button key={t.id} onClick={() => applyTemplate(t)} className={styles.templateBtn}>
               {t.description}

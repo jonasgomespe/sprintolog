@@ -1,8 +1,7 @@
 .header {
   height: 64px;
-  border-bottom: 1px solid var(--border);
-  background-color: rgba(10, 10, 11, 0.8);
-  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--grid-line);
+  background-color: var(--surface);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -11,7 +10,7 @@
 .content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   height: 100%;
   display: flex;
   align-items: center;
@@ -25,35 +24,38 @@
 }
 
 .iconBox {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--grid-line);
   width: 32px;
   height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
 .logo h1 {
   font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .logo h1 span {
-  color: var(--primary);
+  font-family: var(--font-space-mono), monospace;
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 0.25rem;
 }
 
 .settingsBtn {
-  color: var(--muted-foreground);
+  color: var(--muted);
   transition: color 0.2s, transform 0.2s;
 }
 
 .settingsBtn:hover {
   color: var(--foreground);
-  transform: rotate(30deg);
+  transform: rotate(90deg);
 }
 
 @media (max-width: 768px) {

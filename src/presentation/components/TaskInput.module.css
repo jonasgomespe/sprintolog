@@ -1,127 +1,123 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--grid-line);
+  padding: 1.5rem;
 }
 
-.card {
-  background-color: var(--card);
-  padding: 1.25rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
+.sectionTitle {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--grid-line);
+}
+
+.terminalBox {
   display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--background);
+  border: 1px solid var(--grid-line);
+  padding: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  align-items: stretch;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.promptLine {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px dashed var(--grid-line);
+  padding-bottom: 0.5rem;
+}
+
+.promptIcon {
+  color: var(--accent-active);
+}
+
+.mainInput, .jiraInput {
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.mainInput::placeholder, .jiraInput::placeholder {
+  color: var(--muted);
+}
+
+.jiraInput {
+  text-transform: uppercase;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  background-color: transparent;
+  color: var(--accent-active);
+  font-family: var(--font-space-mono), monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.submitBtn:hover:not(:disabled) {
+  color: var(--foreground);
+  text-shadow: 0 0 8px rgba(255, 77, 0, 0.5);
+}
+
+.submitBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  color: var(--muted);
 }
 
 .templates {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.templatesLabel {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
 }
 
 .templateBtn {
-  background-color: var(--secondary);
-  border: 1px solid var(--border);
-  color: var(--muted-foreground);
+  background-color: var(--background);
+  border: 1px solid var(--grid-line);
+  color: var(--muted);
+  font-family: var(--font-space-mono), monospace;
   font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
+  padding: 0.25rem 0.5rem;
   transition: all 0.2s;
 }
 
 .templateBtn:hover {
-  border-color: var(--primary);
+  border-color: var(--foreground);
   color: var(--foreground);
-  background-color: rgba(59, 130, 246, 0.05);
-}
-
-.inputGroup {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.mainInput {
-  background: none;
-  border: none;
-  color: var(--foreground);
-  font-size: 1.125rem;
-  font-weight: 500;
-  width: 100%;
-  outline: none;
-}
-
-.mainInput::placeholder {
-  color: var(--muted-foreground);
-}
-
-.jiraInputWrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--secondary);
-  padding: 0.375rem 0.75rem;
-  border-radius: 6px;
-  width: fit-content;
-  border: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.jiraInputWrapper:focus-within {
-  border-color: var(--primary);
-}
-
-.jiraIcon {
-  color: var(--muted-foreground);
-}
-
-.jiraInput {
-  background: none;
-  border: none;
-  color: var(--foreground);
-  font-size: 0.75rem;
-  font-weight: 600;
-  width: 80px;
-  outline: none;
-  text-transform: uppercase;
-}
-
-.jiraInput::placeholder {
-  color: var(--muted-foreground);
-  text-transform: none;
-}
-
-.submitBtn {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  padding: 0 1.5rem;
-  border-radius: 10px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background-color 0.2s, opacity 0.2s;
-}
-
-.submitBtn:hover:not(:disabled) {
-  background-color: #2563eb;
-}
-
-.submitBtn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 @media (max-width: 640px) {
-  .card {
-    flex-direction: column;
-  }
-  
-  .submitBtn {
-    padding: 0.875rem;
-    justify-content: center;
+  .terminalBox {
+    padding: 0.75rem;
   }
 }

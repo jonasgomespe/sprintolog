@@ -1,98 +1,111 @@
-.card {
-  background-color: var(--card);
-  padding: 1.25rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
+.container {
+  background-color: var(--surface);
+  border: 1px solid var(--grid-line);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  gap: 1.5rem;
+  position: relative;
 }
 
-.header {
+.isActive {
+  border-color: var(--accent-active);
+}
+
+.displayPanel {
+  background-color: var(--background);
+  border: 1px solid var(--grid-line);
+  padding: 1.5rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.header h3 {
-  font-size: 1rem;
+.isActive .displayPanel {
+  border-color: var(--accent-active);
+}
+
+.displayLabel {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+.isActive .displayLabel {
+  color: var(--accent-active);
+}
+
+.displayValue {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 2.5rem;
   font-weight: 700;
-  flex: 1;
+  color: var(--foreground);
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(201, 209, 217, 0.1);
 }
 
-.icon {
-  color: var(--primary);
-}
-
-.countdown {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.875rem;
-  background-color: rgba(59, 130, 246, 0.1);
-  color: var(--primary);
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  font-weight: 700;
+.isActive .displayValue {
+  color: var(--accent-active);
+  text-shadow: 0 0 15px rgba(255, 77, 0, 0.4);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  gap: 1px;
+  background-color: var(--grid-line);
+  border: 1px solid var(--grid-line);
 }
 
 .pontoBtn {
-  background-color: var(--secondary);
-  border: 1px solid transparent;
-  border-radius: 10px;
-  padding: 0.75rem;
+  background-color: var(--surface);
+  padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: var(--muted-foreground);
+  color: var(--muted);
   transition: all 0.2s;
 }
 
 .pontoBtn:not(:disabled):hover {
-  background-color: #313136;
-  border-color: var(--muted-foreground);
-}
-
-.pontoBtn.active {
-  background-color: rgba(59, 130, 246, 0.05);
-  border-color: rgba(59, 130, 246, 0.3);
+  background-color: var(--surface-hover);
   color: var(--foreground);
 }
 
-.pontoBtn:disabled {
-  opacity: 1; /* Keeping opacity but changing color for disabled/already registered */
-  cursor: default;
+.pontoBtn.active {
+  background-color: var(--background);
+  color: var(--accent-log);
 }
 
-.pontoBtn svg {
-  opacity: 0.7;
-}
-
-.pontoBtn.active svg {
-  color: var(--primary);
-  opacity: 1;
+.pontoBtn:disabled:not(.active) {
+  opacity: 0.5;
+  background-color: var(--background);
 }
 
 .pontoBtn span:first-of-type {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
 .time {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-space-mono), monospace;
   font-size: 1rem;
   font-weight: 700;
   color: var(--foreground);
 }
 
+.pontoBtn.active .time {
+  color: var(--accent-log);
+}
+
 @media (max-width: 480px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .displayValue {
+    font-size: 2rem;
   }
 }
