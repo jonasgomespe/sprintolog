@@ -1,7 +1,7 @@
 'use client';
 
 import { useSprintoStore } from '@/presentation/store/useSprintoStore';
-import styles from './TimeClockSection.module.css';
+import styles from './style.module.css';
 import { useEffect, useState } from 'react';
 
 function formatTime(ms: number | null) {

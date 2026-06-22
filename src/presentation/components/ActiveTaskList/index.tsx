@@ -1,7 +1,7 @@
 'use client';
 
 import { useSprintoStore } from '@/presentation/store/useSprintoStore';
-import styles from './ActiveTaskList.module.css';
+import styles from './style.module.css';
 import { Play, Pause, Square, Trash2, Hash } from 'lucide-react';
 import { useState, useEffect } from 'react';
 

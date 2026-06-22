@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useSprintoStore } from '@/presentation/store/useSprintoStore';
-import { Modal } from './Modal';
-import styles from './AiReportModal.module.css';
+import { Modal } from '../Modal';
+import styles from './style.module.css';
 import { Sparkles, Copy, RefreshCcw } from 'lucide-react';
 
 interface AiReportModalProps {

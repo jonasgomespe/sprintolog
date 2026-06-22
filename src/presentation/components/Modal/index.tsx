@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './Modal.module.css';
+import styles from './style.module.css';
 import { X } from 'lucide-react';
 import { useEffect } from 'react';
 

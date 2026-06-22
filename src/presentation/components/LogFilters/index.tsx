@@ -1,7 +1,7 @@
 'use client';
 
 import { useSprintoStore } from '@/presentation/store/useSprintoStore';
-import styles from './LogFilters.module.css';
+import styles from './style.module.css';
 import { Search, Calendar, Clock, X } from 'lucide-react';
 
 export function LogFilters() {

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useSprintoStore } from '@/presentation/store/useSprintoStore';
-import styles from './TaskInput.module.css';
+import styles from './style.module.css';
 import { Terminal, Hash } from 'lucide-react';
 
 export function TaskInput() {

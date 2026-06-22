@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './Header.module.css';
+import styles from './style.module.css';
 import { Settings, Zap } from 'lucide-react';
-import { SettingsModal } from './SettingsModal';
+import { SettingsModal } from '../SettingsModal';
 
 export function Header() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);

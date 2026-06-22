@@ -1,8 +1,8 @@
 'use client';
 
 import { useSprintoStore } from '@/presentation/store/useSprintoStore';
-import { Modal } from './Modal';
-import styles from './SettingsModal.module.css';
+import { Modal } from '../Modal';
+import styles from './style.module.css';
 import { useState } from 'react';
 
 interface SettingsModalProps {

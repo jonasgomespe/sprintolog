@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { useSprintoStore } from '@/presentation/store/useSprintoStore';
-import styles from './LogList.module.css';
+import styles from './style.module.css';
 import { Trash2, Hash, ExternalLink, CheckCircle2, Sparkles, Filter } from 'lucide-react';
-import { AiReportModal } from './AiReportModal';
-import { LogFilters } from './LogFilters';
+import { AiReportModal } from '../AiReportModal';
+import { LogFilters } from '../LogFilters';
 
 function formatDuration(ms: number) {
   const minutes = Math.floor(ms / (1000 * 60));
